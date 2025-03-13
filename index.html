@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIMS - Simple Inventory Management System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- System Name -->
+  <h1 id="system-name">SIMPLE INVENTORY MANAGEMENT SYSTEM (SIMS)</h1>
+
+  <!-- Login Dashboard -->
+  <div id="login-dashboard" class="dashboard">
+    <h2>LOGIN</h2>
+    <form id="login-form">
+      <label for="username">USERNAME:</label>
+      <input type="text" id="username" required>
+      <label for="email">EMAIL:</label>
+      <input type="email" id="email" required>
+      <label for="password">PASSWORD:</label>
+      <input type="password" id="password" required>
+      <button type="submit">LOGIN</button>
+    </form>
+    <p>DON'T HAVE AN ACCOUNT? <a href="#" id="go-to-register">REGISTER HERE</a></p>
+  </div>
+
+  <!-- Register Dashboard -->
+  <div id="register-dashboard" class="dashboard" style="display: none;">
+    <h2>REGISTER</h2>
+    <form id="register-form">
+      <label for="fullname">FULL NAME:</label>
+      <input type="text" id="fullname" required>
+      <label for="register-email">EMAIL/PHONE:</label>
+      <input type="text" id="register-email" required>
+      <label for="register-username">USERNAME:</label>
+      <input type="text" id="register-username" required>
+      <label for="register-password">PASSWORD:</label>
+      <input type="password" id="register-password" required>
+      <div id="password-strength"></div>
+      <label for="role">ROLE:</label>
+      <select id="role" required>
+        <option value="Admin">Admin</option>
+        <option value="Manager">Manager</option>
+        <option value="Salesperson">Salesperson</option>
+      </select>
+      <button type="submit">REGISTER</button>
+    </form>
+    <p>ALREADY HAVE AN ACCOUNT? <a href="#" id="go-to-login">LOGIN HERE</a></p>
+  </div>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIMS - Simple Inventory Management System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+ <!-- Admin Dashboard -->
+<div id="admin-dashboard" class="dashboard" style="display: none;">
+  <h2>ADMIN DASHBOARD</h2>
+  <div class="sections">
+    <div class="section" id="product-entry">
+      <h3>PRODUCT ENTRY <span class="record-count">0</span></h3>
+      <button onclick="showProductEntry()">ACCESS</button>
+    </div>
+    <div class="section" id="sales-entry">
+      <h3>SALES ENTRY <span class="record-count">0</span></h3>
+      <button onclick="showSalesEntry()">ACCESS</button>
+    </div>
+    <div class="section" id="reports-analytics">
+      <h3>REPORTS & ANALYTICS <span class="record-count">0</span></h3>
+      <button onclick="showReportsAnalytics()">ACCESS</button>
+    </div>
+    <div class="section" id="transaction-entry">
+      <h3>TRANSACTION ENTRY <span class="record-count">0</span></h3>
+      <button onclick="showTransactionEntry()">ACCESS</button>
+    </div>
+  </div>
+  <!-- Back to Login Button -->
+  <button id="back-to-login" onclick="goBackToLogin()">BACK TO LOGIN</button>
+</div>
+  <!-- Product Entry -->
+  <div id="product-entry-dashboard" class="dashboard" style="display: none;">
+    <h2>PRODUCT ENTRY</h2>
+    <form id="product-entry-form">
+      <label for="product-name">PRODUCT NAME:</label>
+      <input type="text" id="product-name" required>
+      <label for="category">CATEGORY:</label>
+      <select id="category" required>
+        <option value="Perishable">Perishable</option>
+        <option value="Non-Perishable">Non-Perishable</option>
+      </select>
+      <label for="supplier-details">SUPPLIER DETAILS:</label>
+      <input type="text" id="supplier-details" required>
+      <label for="purchase-price">PURCHASE PRICE:</label>
+      <input type="number" id="purchase-price" required>
+      <label for="selling-price">SELLING PRICE:</label>
+      <input type="number" id="selling-price" required>
+      <label for="stock-quantity">STOCK QUANTITY:</label>
+      <input type="number" id="stock-quantity" required>
+      <label for="expiry-date">EXPIRY DATE:</label>
+      <input type="date" id="expiry-date">
+      <label for="product-image">PRODUCT IMAGE:</label>
+      <input type="file" id="product-image">
+      <button type="submit">SUBMIT</button>
+    </form>
+    <table id="product-table">
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Category</th>
+          <th>Supplier Details</th>
+          <th>Purchase Price</th>
+          <th>Selling Price</th>
+          <th>Stock Quantity</th>
+          <th>Expiry Date</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <button onclick="goBackToAdmin()">BACK TO ADMIN</button>
+  </div>
+
+  <!-- Sales Entry -->
+  <div id="sales-entry-dashboard" class="dashboard" style="display: none;">
+    <h2>SALES ENTRY</h2>
+    <form id="sales-entry-form">
+      <label for="sales-product-name">PRODUCT NAME:</label>
+      <input type="text" id="sales-product-name" required>
+      <label for="sales-quantity">QUANTITY:</label>
+      <input type="number" id="sales-quantity" required>
+      <label for="customer-details">CUSTOMER DETAILS:</label>
+      <input type="text" id="customer-details" required>
+      <button type="submit">SUBMIT</button>
+    </form>
+    <table id="sales-table">
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Quantity</th>
+          <th>Customer Details</th>
+          <th>Profit/Loss</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <button onclick="goBackToAdmin()">BACK TO ADMIN</button>
+  </div>
+
+  <!-- Reports & Analytics -->
+  <div id="reports-analytics-dashboard" class="dashboard" style="display: none;">
+    <h2>REPORTS & ANALYTICS</h2>
+    <div id="metrics">
+      <p>TOTAL STOCK AVAILABLE: <span id="total-stock">0</span></p>
+      <p>TOTAL SALES TODAY: <span id="total-sales-today">0</span></p>
+      <p>LOW STOCK ALERTS: <span id="low-stock-alerts">0</span></p>
+      <p>EXPIRING SOON ALERTS: <span id="expiring-soon-alerts">0</span></p>
+    </div>
+    <button onclick="goBackToAdmin()">BACK TO ADMIN</button>
+  </div>
+
+  <!-- Transaction Entry -->
+  <div id="transaction-entry-dashboard" class="dashboard" style="display: none;">
+    <h2>TRANSACTION ENTRY</h2>
+    <form id="transaction-entry-form">
+      <label for="transaction-product-name">PRODUCT NAME:</label>
+      <input type="text" id="transaction-product-name" required>
+      <label for="transaction-quantity">QUANTITY:</label>
+      <input type="number" id="transaction-quantity" required>
+      <label for="transaction-date">DATE:</label>
+      <input type="date" id="transaction-date" required>
+      <button type="submit">SUBMIT</button>
+    </form>
+    <table id="transaction-table">
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Quantity</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <button onclick="goBackToAdmin()">BACK TO ADMIN</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+  

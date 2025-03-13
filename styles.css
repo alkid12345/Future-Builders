@@ -1,0 +1,152 @@
+body {
+  font-family: 'Times New Roman', serif;
+  background-color: gray;
+  color: white;
+  text-align: center;
+}
+
+#system-name {
+  color: yellow;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+.dashboard {
+  background-color: green;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  margin: 50px auto;
+}
+
+h2, h3 {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+input, select, button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: none;
+}
+
+button {
+  background-color: yellow;
+  color: black;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.sections {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.section {
+  background-color: #555;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.record-count {
+  color: yellow;
+}
+
+#password-strength {
+  height: 5px;
+  background-color: #ddd;
+  margin-top: 5px;
+}
+body {
+  font-family: 'Times New Roman', serif;
+  background-color: gray;
+  color: white;
+  text-align: center;
+}
+
+#system-name {
+  color: yellow;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+.dashboard {
+  background-color: green;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  margin: 50px auto;
+}
+
+h2, h3 {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+input, select, button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: none;
+}
+
+button {
+  background-color: yellow;
+  color: black;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.sections {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.section {
+  background-color: #555;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.record-count {
+  color: yellow;
+}
+
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid white;
+}
+
+#metrics p {
+  font-size: 18px;
+  font-weight: bold;
+}
